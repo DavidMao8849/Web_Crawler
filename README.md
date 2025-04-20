@@ -55,40 +55,28 @@
 ## 💻 주요 코드 예시
 
 ```python
-import urllib.request
-from bs4 import BeautifulSoup
-import pandas as pd
-
 def Ediya_menu(result):
-    Ediya_url = 'https://ediya.com/contents/drink.html' # 가져올 url 문자열로 입력
-    html = urllib.request.urlopen(Ediya_url) # url을 요청하여 응답받은 html이 담긴 자료를 받아와서 저장함.
-    soupEdiya = BeautifulSoup(html, 'html.parser') #BeautifulSoup의 객체를 생성함.(html을 잘 정리된 형태로 변환)
-    menu_items = soupEdiya.find_all('div', class_='pro_detail') #필요한 항목의 태그와 클래스를 분석하여 파싱한다.
+    Ediya_url = 'https://ediya.com/contents/drink.html'
+    html = urllib.request.urlopen(Ediya_url)
+    soupEdiya = BeautifulSoup(html, 'html.parser')
+    menu_items = soupEdiya.find_all('div', class_='pro_detail')
 
     for menu in menu_items:
-        if menu:
-            menu_name = menu.find('h2').text.strip() # 음료 메뉴 항목에서 음료 이름에 해당하는 부분 추출
-            menu_detail = menu.find('p').text.strip() # 음료 설명에 해당하는 부분 추출
-            menu_nutri = menu.find('div', class_='pro_nutri').text.strip()  # 음료 영양분에 해당하는 부분 추출
-            menu_allergy = menu.find('div', class_='pro_allergy').text.strip() # 알러지 성분에 해당하는 부분 추출
-            result.append([menu_name, menu_detail, menu_nutri, menu_allergy]) # 추출한 결과들을 result에 추가 저장
-
-def main():
-    result = [] #추출한 결과들을 저장할 공간 생성
-    Ediya_menu(result) #위의 Ediya_menu함수 호출
-    Ediya_tbl = pd.DataFrame(result, columns=('name', 'detail', 'nutri', 'allergy')) #추출한 결과를 데이터프레임으로 저장
-    Ediya_tbl.to_csv('Ediya_menu.csv', encoding='utf-8-sig', mode='w', index=False) # Ediya_menu.csv파일로 저장
-
-if __name__ == '__main__':
-    main()
+        menu_name = menu.find('h2').text.strip()
+        menu_detail = menu.find('p').text.strip()
+        menu_nutri = menu.find('div', class_='pro_nutri').text.strip()
+        menu_allergy = menu.find('div', class_='pro_allergy').text.strip()
+        result.append([menu_name, menu_detail, menu_nutri, menu_allergy])
 ```
 
 ---
 
 ## 📊 결과 예시 (CSV)
-![image](https://github.com/user-attachments/assets/f746d10d-06e7-491c-9085-c94dbbebfbee)
 
-
+| name           | detail                        | nutri                     | allergy        |
+|----------------|-------------------------------|----------------------------|----------------|
+| 콜드브루 아메리카노 | 부드러운 콜드브루 커피           | 10kcal, 당 0g 등            | 없음           |
+| 꿀자몽에이드      | 자몽과 꿀이 어우러진 상큼한 음료 | 120kcal, 당 27g 등          | 자몽함유        |
 
 ---
 
