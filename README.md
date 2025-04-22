@@ -119,5 +119,5 @@ if __name__ == '__main__':
 
 ## 📎 부록
 
-- 📄 [PBL 결과보고서 PDF](./인공지능과%20데이터과학%20PBL%20결과보고서_인싸조(0613).pdf)
-- 📊 [발표 PPT](./인공지능과%20데이터과학%20인싸조%20팀프로젝트%20발표%20PPT.pptx)
+- 📄 [PBL 결과보고서 PDF](https://github.com/DavidMao8849/Web_Crawler/blob/a832aefc29e70cc5bcf0ebabeb979df046783f9e/docs/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B3%BC%ED%95%99%20PBL%20%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C_%EC%9D%B8%EC%8B%B8%EC%A1%B0(0613).pdf)
+- 📊 [발표 PPT](https://github.com/DavidMao8849/Web_Crawler/blob/a832aefc29e70cc5bcf0ebabeb979df046783f9e/docs/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC%20%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B3%BC%ED%95%99%20%EC%9D%B8%EC%8B%B8%EC%A1%B0%20%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%B0%9C%ED%91%9C%20PPT.pptx)
